@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_22_191531) do
+ActiveRecord::Schema.define(version: 2021_06_07_045731) do
+
+  create_table "bank_accounts", force: :cascade do |t|
+    t.float "balance", default: 0.0
+    t.string "account_number"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bank_accounts_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
