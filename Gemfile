@@ -33,6 +33,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker'
   gem 'json_spec', '~> 1.1', '>= 1.1.5'
+  gem 'json_matchers'
+  gem 'rspec-json_expectations'
+
 end
 
 group :development do
