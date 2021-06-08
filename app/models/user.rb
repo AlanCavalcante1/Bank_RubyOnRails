@@ -1,4 +1,7 @@
 class User < ApplicationRecord
+  has_secure_password 
+
+  #relationship
   has_one :bank_account
 
   validates :first_name, :last_name, presence: true
