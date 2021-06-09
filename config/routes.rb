@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+  #Login and SignUp
   post '/login', to: 'authentication#login'
   post '/sign_up', to: 'authentication#sign_up'
-  resources :bank_accounts
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  #BankAccount
+  resources :bank_accounts, expect: [:create]
+
+  #User
+  resources :users, expect: [:create]
+  
 end
