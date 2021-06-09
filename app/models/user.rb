@@ -4,6 +4,7 @@ class User < ApplicationRecord
   #relationship
   has_one :bank_account
 
+  #validate
   validates :first_name, :last_name, presence: true
   VALIDATE_EMAIL_FORMAT= /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   validates :email, presence: true, uniqueness: true, format: { with: VALIDATE_EMAIL_FORMAT, message: "email_format_incorrect" }
