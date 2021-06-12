@@ -4,9 +4,9 @@ Rails.application.routes.draw do
   post '/sign_up', to: 'authentication#sign_up'
 
   #BankAccount
-  resources :bank_accounts, expect: [:create]
+  resources :bank_accounts, except: [:create, :update, :destroy]
 
   #User
-  resources :users, expect: [:create]
+  resources :users, except: [:create]
   
 end
