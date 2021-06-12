@@ -6,7 +6,7 @@ class AuthenticationController < ApplicationController
     
     if user
       token = JsonWebToken.encode(user_id: user.id)
-      render json: {token: token, user: user}
+      render json: {token: token, user: UserSerializer.new(user)}
     else
       render json: {message: "Nao foi possivel fazer o login"}, status: 401
     end
