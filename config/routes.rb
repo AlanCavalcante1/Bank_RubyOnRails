@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  resources :bank_accounts
-  resources :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  #Login and SignUp
+  post '/login', to: 'authentication#login'
+  post '/sign_up', to: 'authentication#sign_up'
+
+  #BankAccount
+  resources :bank_accounts, except: [:create, :update, :destroy]
+
+  #User
+  resources :users, except: [:create]
+  
 end
