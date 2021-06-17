@@ -10,6 +10,6 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: VALIDATE_EMAIL_FORMAT, message: "email_format_incorrect" }
   VALIDATE_CPF_FORMAT = /\A[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}\Z/
   validates :cpf, presence: true, uniqueness: true, format: {with: VALIDATE_CPF_FORMAT, message: "cpf_format_incorrect"}
-  validates :password, presence: true, length: {minimum:6}
+  validates :password, presence: true, length: {minimum:6}, :if => :password
 
 end
