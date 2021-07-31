@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_secure_password 
 
   #relationship
-  has_one :bank_account
+  has_one :bank_account, dependent: :destroy
 
   #validate
   validates :first_name, :last_name, presence: true
